@@ -14,11 +14,11 @@ $f3->route('GET /', function() use ($f3) {
 $f3->route('GET /@date/@home/@away', function() use ($f3){
 	$request 	= $f3->get('PARAMS');
 	$date 		= date('Ymd',strtotime($request['date']));
-	$home			= strtolower(str_replace(' ', '-', $request['home']));
-	$away			= strtolower(str_replace(' ', '-', $request['away']));
+	$home		= strtolower(str_replace(' ', '-', $request['home']));
+	$away		= strtolower(str_replace(' ', '-', $request['away']));
 
-	$api			= "http://erikberg.com/nba/boxscore/$date-$home-at-$away.json";
-	$web 			= new Web;
+	$api		= "http://erikberg.com/nba/boxscore/$date-$home-at-$away.json";
+	$web 		= new Web;
 	$response = $web->request($api);
 	
 	switch ($response['headers'][0])
