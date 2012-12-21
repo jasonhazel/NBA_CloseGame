@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/New_York');
 $f3=require('lib/base.php');
 
 $f3->set('DEBUG',2);
