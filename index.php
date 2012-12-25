@@ -36,7 +36,7 @@ $f3->route('GET /@date/@home/@away', function() use ($f3){
 			foreach ($game_data->away_period_scores as $score)
 				$away_score += $score;
 
-			$within_threshold = (abs($home_score - $away_score <= 10) ? 'Yes' : 'No');
+			$within_threshold = (abs($home_score - $away_score) <= 10 ? 'Yes' : 'No');
 			$f3->set('output', $within_threshold);
 
 		break;
